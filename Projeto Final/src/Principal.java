@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
@@ -36,6 +38,11 @@ public class Principal {
         outroFilme.setAnoDeLancamento(2023);
         outroFilme.setDuracaoEmMinutos(200);
 
+        Filme fax = new Filme();
+        fax.setNome("A volta e criação de Fax");
+        fax.setAnoDeLancamento(2024);
+        fax.setDuracaoEmMinutos(360);
+
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(meuFilme);
         calculadora.inclui(outroFilme);
@@ -50,5 +57,15 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(fax);
+        System.out.println(listaDeFilmes);
+        System.out.println(listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes.get(0).toString());
+        System.out.println(listaDeFilmes.get(1).getNome());
+        System.out.println(listaDeFilmes.get(1).toString());
+
     }
 }
